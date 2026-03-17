@@ -30,35 +30,29 @@ public class LoginDDTTest extends BaseTest implements ITest {
         return testName.get();
     }
 
-    @Test(dataProvider = "SmokeData", dataProviderClass = bai4_json_faker.dataproviders.JsonDataProvider.class, groups = {"smoke", "regression"})
+    @Test(dataProvider = "SmokeData", dataProviderClass = bai3_excel_ddt.dataproviders.LoginDataProvider.class, groups = {"smoke", "regression"})
     public void testLoginSmoke(String username, String password, String expectedUrl, String description) {
         System.out.println("[DDT] Đang chạy Test: " + description);
         LoginPage loginPage = new LoginPage(getDriver());
         loginPage.login(username, password);
-        
-        // Assert dựa trên URL
         Assert.assertTrue(getDriver().getCurrentUrl().contains(expectedUrl), "URL sau đăng nhập không trùng khớp");
     }
 
-    @Test(dataProvider = "NegativeData", dataProviderClass = bai4_json_faker.dataproviders.JsonDataProvider.class, groups = {"regression"})
+    @Test(dataProvider = "NegativeData", dataProviderClass = bai3_excel_ddt.dataproviders.LoginDataProvider.class, groups = {"regression"})
     public void testLoginNegative(String username, String password, String expectedError, String description) {
         System.out.println("[DDT] Đang chạy Test: " + description);
         LoginPage loginPage = new LoginPage(getDriver());
         loginPage.loginExpectingFailure(username, password);
-        
-        // Assert dựa trên Error Message
         Assert.assertTrue(loginPage.isErrorDisplayed(), "Lỗi phải hiển thị đối với case Negative");
         Assert.assertTrue(loginPage.getErrorMessage().contains(expectedError), "Nội dung lỗi không giống mong đợi");
     }
 
-    @Test(dataProvider = "BoundaryData", dataProviderClass = bai4_json_faker.dataproviders.JsonDataProvider.class, groups = {"regression"})
+    @Test(dataProvider = "BoundaryData", dataProviderClass = bai3_excel_ddt.dataproviders.LoginDataProvider.class, groups = {"regression"})
     public void testLoginBoundary(String username, String password, String expectedError, String description) {
         System.out.println("[DDT] Đang chạy Test: " + description);
         LoginPage loginPage = new LoginPage(getDriver());
         loginPage.loginExpectingFailure(username, password);
-
-        // Assert dựa trên Error Message nếu như Expected error có text (tránh NullPointer).
-        if(expectedError != null && !expectedError.isEmpty()) {
+        if (expectedError != null && !expectedError.isEmpty()) {
             Assert.assertTrue(loginPage.isErrorDisplayed(), "Lỗi phải hiển thị đối với case Boundary có ErrorMessage");
             Assert.assertTrue(loginPage.getErrorMessage().contains(expectedError), "Nội dung lỗi ở Boundary case không chuẩn");
         }

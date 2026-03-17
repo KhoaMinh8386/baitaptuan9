@@ -8,31 +8,29 @@ import org.testng.annotations.Test;
 
 public class LoginTest extends BaseTest {
 
+    private static final String VALID_USER = "standard_user";
+    private static final String VALID_PASS = "secret_sauce";
+    private static final String WRONG_PASS = "wrong_password";
+
     @Test
     public void testLoginSuccess() {
-        System.out.println("[INFO] Test: Đăng nhập thành công");
         LoginPage loginPage = new LoginPage(getDriver());
-        InventoryPage inventoryPage = loginPage.login("standard_user", "secret_sauce");
-        
+        InventoryPage inventoryPage = loginPage.login(VALID_USER, VALID_PASS);
         Assert.assertTrue(inventoryPage.isLoaded(), "Trang Inventory không được load sau khi đăng nhập!");
     }
 
     @Test
     public void testLoginFail() {
-        System.out.println("[INFO] Test: Đăng nhập thất bại do sai PASS");
         LoginPage loginPage = new LoginPage(getDriver());
-        loginPage.loginExpectingFailure("standard_user", "wrong_password");
-        
+        loginPage.loginExpectingFailure(VALID_USER, WRONG_PASS);
         Assert.assertTrue(loginPage.isErrorDisplayed(), "Lỗi không được hiển thị");
         Assert.assertTrue(loginPage.getErrorMessage().contains("Username and password do not match"), "Câu lỗi không đúng");
     }
 
     @Test
     public void testEmptyUsername() {
-        System.out.println("[INFO] Test: Đăng nhập tài khoản rỗng");
         LoginPage loginPage = new LoginPage(getDriver());
-        loginPage.loginExpectingFailure("", "secret_sauce");
-        
+        loginPage.loginExpectingFailure("", VALID_PASS);
         Assert.assertTrue(loginPage.isErrorDisplayed(), "Lỗi field trống không hiển thị");
         Assert.assertTrue(loginPage.getErrorMessage().contains("Username is required"), "Câu lỗi sai hoặc mất tiêu");
     }

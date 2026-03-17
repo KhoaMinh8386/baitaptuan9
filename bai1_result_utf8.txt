@@ -1,0 +1,129 @@
+﻿[INFO] Scanning for projects...
+[INFO] 
+[INFO] ---------------------< org.example:pom-framework >----------------------
+[INFO] Building pom-framework 1.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.2.0:clean (default-clean) @ pom-framework ---
+[INFO] Deleting C:\NAMCUOI\PROJECTTESTTUAN9\target
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ pom-framework ---
+[INFO] skip non existing resourceDirectory C:\NAMCUOI\PROJECTTESTTUAN9\src\main\resources
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ pom-framework ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ pom-framework ---
+[INFO] Copying 4 resources from src\test\resources to target\test-classes
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ pom-framework ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 25 source files with javac [debug target 17] to target\test-classes
+[INFO] 
+[INFO] --- surefire:3.2.5:test (default-test) @ pom-framework ---
+[INFO] Using auto detected provider org.apache.maven.surefire.testng.TestNGProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running TestSuite
+mvn : SLF4J: Failed to load 
+class "org.slf4j.impl.StaticL
+oggerBinder".
+At line:1 char:1
++ mvn clean test "-Dsurefire.
+suiteXmlFiles=testng-bai1.xml
+" > bai1_resu ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~
+    + CategoryInfo           
+   : NotSpecified: (SLF4J:   
+  Failed t...cLoggerBinder   
+ ".:String) [], RemoteExc    
+eption
+    + FullyQualifiedErrorId  
+   : NativeCommandError
+ 
+SLF4J: Defaulting to 
+no-operation (NOP) logger 
+implementation
+SLF4J: See http://www.slf4j.o
+rg/codes.html#StaticLoggerBin
+der for further details.
+Mar 17, 2026 4:02:42 PM org.o
+penqa.selenium.devtools.CdpVe
+rsionFinder findNearestMatch
+WARNING: Unable to find CDP 
+implementation matching 145
+Mar 17, 2026 4:02:42 PM org.o
+penqa.selenium.chromium.Chrom
+iumDriver lambda$new$5
+WARNING: Unable to find 
+version of CDP to use for 
+145.0.7632.160. You may need 
+to include a dependency on a 
+specific version of the CDP 
+using something similar to `o
+rg.seleniumhq.selenium:seleni
+um-devtools-v86:4.18.1` 
+where the version ("v86") 
+matches the version of the 
+chromium-based browser 
+you're using and the version 
+number of the artifact is 
+the same as Selenium's.
+[ConfigReader] ?ang d∙ng m⌠i tr??ng: dev
+[INFO] Screenshot saved successfully at: C:\NAMCUOI\PROJECTTESTTUAN9\target\screenshots\testLoginFailureForScreenshot_20260317_160243.png
+[ERROR] Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 2.763 s <<< FAILURE! -- in TestSuite
+[ERROR] bai1_base.tests.DemoTest.testLoginFailureForScreenshot -- Time elapsed: 0.014 s <<< FAILURE!
+java.lang.AssertionError: C? t∞nh fail DemoTest ?? check tφnh n?ng ch?p Screenshot t? ??ng. expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1578)
+	at org.testng.Assert.assertTrue(Assert.java:57)
+	at bai1_base.tests.DemoTest.testLoginFailureForScreenshot(DemoTest.java:11)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:228)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:961)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:201)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at org.testng.internal.thread.graph.TestNGFutureTask.run(TestNGFutureTask.java:22)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+[INFO] 
+[INFO] Results:
+[INFO] 
+[ERROR] Failures: 
+[ERROR]   DemoTest.testLoginFailureForScreenshot:11 C? t∞nh fail DemoTest ?? check tφnh n?ng ch?p Screenshot t? ??ng. expected [true] but found [false]
+[INFO] 
+[ERROR] Tests run: 1, Failures: 1, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  5.793 s
+[INFO] Finished at: 2026-03-17T16:02:44+07:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:3.2.5:test (default-test) on project pom-framework: There are test failures.
+[ERROR] 
+[ERROR] Please refer to C:\NAMCUOI\PROJECTTESTTUAN9\target\surefire-reports for the individual test results.
+[ERROR] Please refer to dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

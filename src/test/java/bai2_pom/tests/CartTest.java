@@ -11,39 +11,35 @@ import java.util.List;
 
 public class CartTest extends BaseTest {
 
+    private static final String VALID_USER = "standard_user";
+    private static final String VALID_PASS = "secret_sauce";
+
     @Test
     public void testAddItemToCart() {
-        System.out.println("[INFO] Test: Thêm 1 sản phẩm vào giỏ hàng");
         LoginPage loginPage = new LoginPage(getDriver());
-        int count = loginPage.login("standard_user", "secret_sauce")
+        int count = loginPage.login(VALID_USER, VALID_PASS)
                 .addFirstItemToCart()
                 .getCartItemCount();
-        
         Assert.assertEquals(count, 1, "Số lượng trên Cart Badge phải là 1");
     }
 
     @Test
     public void testRemoveItemFromCart() {
-        System.out.println("[INFO] Test: Xoá 1 sản phẩm khỏi giỏ hàng");
         LoginPage loginPage = new LoginPage(getDriver());
-        CartPage cartPage = loginPage.login("standard_user", "secret_sauce")
+        CartPage cartPage = loginPage.login(VALID_USER, VALID_PASS)
                 .addFirstItemToCart()
                 .goToCart()
                 .removeFirstItem();
-        
-        Assert.assertEquals(cartPage.getItemCount(), 0, "Cart Count phải trống rỗng bằng 0");
+        Assert.assertEquals(cartPage.getItemCount(), 0, "Cart phải rống sau khi xóa");
     }
 
     @Test
     public void testAddMultipleItemsAndVerify() {
-        System.out.println("[INFO] Test: Thêm nhiều SP & kiểm chứng tên sản phẩm");
         LoginPage loginPage = new LoginPage(getDriver());
-        InventoryPage inventoryPage = loginPage.login("standard_user", "secret_sauce")
+        InventoryPage inventoryPage = loginPage.login(VALID_USER, VALID_PASS)
                 .addItemByName("Sauce Labs Backpack")
                 .addItemByName("Sauce Labs Bike Light");
-        
         Assert.assertEquals(inventoryPage.getCartItemCount(), 2, "Cart badge count phải bằng 2");
-        
         List<String> cartItemNames = inventoryPage.goToCart().getItemNames();
         Assert.assertTrue(cartItemNames.contains("Sauce Labs Backpack"), "Không có balo");
         Assert.assertTrue(cartItemNames.contains("Sauce Labs Bike Light"), "Không có đèn xe");
