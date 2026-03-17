@@ -22,4 +22,9 @@ C:\NAMCUOI\PROJECTTESTTUAN9\src\test\java\bai5_config\utils\ConfigReader.java
 C:\NAMCUOI\PROJECTTESTTUAN9\src\test\java\bai6_retry\tests\FlakySimulationTest.java
 C:\NAMCUOI\PROJECTTESTTUAN9\src\test\java\bai6_retry\utils\RetryAnalyzer.java
 C:\NAMCUOI\PROJECTTESTTUAN9\src\test\java\bai6_retry\utils\RetryListener.java
+C:\NAMCUOI\PROJECTTESTTUAN9\src\test\java\bai7_refactor\dataproviders\LoginDataProvider.java
+C:\NAMCUOI\PROJECTTESTTUAN9\src\test\java\bai7_refactor\legacy\OldLoginTest.java
+C:\NAMCUOI\PROJECTTESTTUAN9\src\test\java\bai7_refactor\pages\InventoryPage.java
+C:\NAMCUOI\PROJECTTESTTUAN9\src\test\java\bai7_refactor\pages\LoginPage.java
+C:\NAMCUOI\PROJECTTESTTUAN9\src\test\java\bai7_refactor\tests\LoginTest.java
 C:\NAMCUOI\PROJECTTESTTUAN9\src\test\java\utils\ExcelDataGenerator.java

@@ -1,12 +1,15 @@
 bai2_pom\pages\CartPage.class
+bai7_refactor\legacy\OldLoginTest.class
 bai2_pom\pages\LoginPage.class
 bai1_base\tests\DemoTest.class
 bai4_json_faker\tests\UserLoginTest.class
 bai2_pom\tests\CartTest.class
+bai7_refactor\dataproviders\LoginDataProvider.class
 bai6_retry\utils\RetryAnalyzer.class
 bai1_base\utils\ScreenshotUtil.class
 bai3_excel_ddt\dataproviders\LoginDataProvider.class
 bai5_config\tests\ConfigDemoTest.class
+bai7_refactor\tests\LoginTest.class
 utils\ExcelDataGenerator.class
 bai3_excel_ddt\utils\ExcelReader$1.class
 bai4_json_faker\models\UserData.class
@@ -19,9 +22,11 @@ bai4_json_faker\utils\JsonReader$1.class
 bai6_retry\utils\RetryListener.class
 bai2_pom\pages\InventoryPage.class
 bai4_json_faker\tests\CheckoutTest.class
+bai7_refactor\pages\InventoryPage.class
 bai1_base\base\BaseTest.class
 bai5_config\utils\ConfigReader.class
 bai3_excel_ddt\utils\ExcelReader.class
 bai1_base\base\BasePage.class
 bai4_json_faker\utils\JsonReader.class
+bai7_refactor\pages\LoginPage.class
 bai4_json_faker\utils\TestDataFactory.class
